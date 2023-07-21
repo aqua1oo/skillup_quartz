@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="Interface"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <procedure id="KfsOrderSendUpdate" parameterMap="KfsOrderSendUpdateParams" resultClass="int">
+      UP_KFS_TN_ORDER_SEND_UPD
+    </procedure>
+
+    <procedure id="KfsOrderSendList" parameterMap="KfsOrderSendListParams" resultClass="Interface.Entity.Kfs">
+      UP_KFS_TN_ORDER_SEND_SEL 
+    </procedure>
+  </statements>
+
+  <parameterMaps>
+    <parameterMap id="KfsOrderSendUpdateParams" class="Hashtable" >
+      <parameter property="order_id"  column="order_id" dbType="varchar" direction="Input"/>
+    </parameterMap>
+    <parameterMap id="KfsOrderSendListParams" class="Hashtable" >
+      <parameter property="organ_inf_cd" column="organ_inf_cd" dbType="varchar" direction="Input"/>
+      <parameter property="order_id"  column="order_id" dbType="varchar" direction="Input"/>
+      <parameter property="order_type_cd"  column="order_type_cd" dbType="varchar" direction="Input"/>
+    </parameterMap>
+  </parameterMaps>
+
+</sqlMap>

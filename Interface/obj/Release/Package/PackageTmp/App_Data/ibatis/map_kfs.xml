@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="Interface"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <procedure id="TempInsert" parameterMap="TempInsertParams" resultClass="int">
+      UP_MEMBER_TEMP_INT
+    </procedure>
+
+    <procedure id="KfsOrderSendList" parameterMap="KfsOrderSendListParams" resultClass="Interface.Entity.Kfs">
+      UP_KFS_TN_ORDER_SEND_SEL 
+    </procedure>
+  </statements>
+
+  <parameterMaps>
+    <parameterMap id="TempInsertParams" class="Hashtable" >
+      <parameter property="etc1"  column="etc1" dbType="varchar" direction="Input"/>
+    </parameterMap>
+    <parameterMap id="KfsOrderSendListParams" class="Hashtable" >
+      <parameter property="organ_inf_cd" column="organ_inf_cd" dbType="varchar" direction="Input"/>
+    </parameterMap>
+  </parameterMaps>
+
+</sqlMap>
